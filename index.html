@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Disaster Management Practical</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Disaster Management Practical">
+  <meta name="author" content="Amit Ghosh">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/lists.css"></link>
+<link rel=stylesheet href="./assets/css/quotes.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="./assets/css/sizes.css"></link>
+<link rel=stylesheet href="./assets/css/tables.css"></link>
+<link rel=stylesheet href="./assets/css/text.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Disaster Management Practical</h1>
+    <h2></h2>
+    <p>Amit Ghosh<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Remote Sensing: Physical principle</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/radiance-diagram.PNG" alt="RS" align="middle" height="500"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Landsat 8</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/l8.png" alt="RS" align="middle" height="500"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Radiometric Conversion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[L_\lambda = M_L \times  Q_{cal} + A_L\]
+\(M_L\) = Radiance multiplicative scaling factor for the band </p>
+
+<p>\(A_L\) = Radiance additive scaling factor for the band </p>
+
+<p>\[\rho _\lambda' = M_\rho \times Q_{cal} + A_\rho\]</p>
+
+<p>\(M_\rho\) = Reflectance multiplicative scaling factor for the band </p>
+
+<p>\(A_\rho\) = Reflectance additive scaling factor for the band </p>
+
+<p>\[\rho _\lambda' = \frac{\rho _\lambda'}{cos\theta _{sz}} \]
+\[\rho _\lambda' = \frac{\rho _\lambda'}{sin\theta _{se}} \]</p>
+
+<p>\(\theta_{sz}\) = zenith angle, 
+\(\theta_{sz}\) = elevation angle</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Evapotranspiration</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This method proposed by Brunsell and Gillies (2003) to obtain the fraction of vegetation.</p>
+
+<p>\[N = \frac{NDVI-NDVI_0}{NDVI_{max}-NDVI_0}\]</p>
+
+<p>Where \(NDVI_0\) = the bare soil NDVI and \(NDVI_{max}\) is the maximum NDVI of full cover dense vegetation.  The fraction of cover is then estimated as</p>
+
+<p>\[VegFr = N^2\]</p>
+
+<p>Brunsell, N.A., and R. R. Gillies. 2003. Length Scale Analysis of Surface Energy Fluxes Derived from Remote Sensing. Journal of Hydrometeorology, 4, 1212-1219.</p>
+
+<h3>Actual ET</h3>
+
+<p>\[AET = RefET \times VegFr\]</p>
+
+<p>The reference surface is a hypothetical grass reference crop with an assumed crop height of 0.12 m, a fixed surface resistance of 70 s m-1 and an albedo of 0.23.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Vegetation Condition Index -VCI</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[VCI = \frac{NDVI (x,y) - NDVI_{min} (x,y)}{NDVI_{max} (x,y)-NDVI_{min} (x,y) } \times 100\]</p>
+
+<p>Kogan, F. N. F. Remote sensing of weather impacts on vegetation in non-homogeneous areas. International Journal of Remote Sensing 1990, 11, 1405–1419.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>GIS Data Model</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/datamodel.svg" alt="RS" align="middle" height="500"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Runoff &amp; Flood Hydrograph</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>NRCS CN</h3>
+
+<p>\[\frac{P-I_a-Q}{S}=\frac{Q}{P-I_a}\]</p>
+
+<p>\[Q=\frac{(P-I_a)^2}{S+P-I_a}\]
+The typical value for \(I_a =0.2S\)
+So,
+\[Q =\frac{(P-0.2)^2}{(P-0.8S)}\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Beneth the Surface</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/bs.png" alt="RS" align="middle" height="350">
+<q>...simillar physical forms can hide radically different wiring...</q></p>
+
+<h2> Source: Nature|Vol 465|20 Nov 2008</h2>
+
+<h2>Curve Number</h2>
+
+<p>\[CN = \frac{1000}{S+10}\]</p>
+
+<p>\[S = \frac{1000}{CN-10}\]</p>
+
+<p>\[S=\frac{25400}{CN}-254\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <article data-timings="">
+    <p><img src="assets/img/cn.png" alt="RS" align="middle" height="650"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>DEM</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/dem.png" alt="RS" align="middle" height="250"></p>
+
+<p><img src="assets/img/3dem.png" alt="RS" align="middle" height="250"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h3>Watershed &amp; Hydrograph</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/hydro1.png" alt="RS" align="middle" height="550"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h3>Watershed &amp; Hydrograph cont..</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/hydro2.png" alt="RS" align="middle" height="450"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Remote Sensing: Physical principle'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Landsat 8'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Radiometric Conversion'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Evapotranspiration'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Vegetation Condition Index -VCI'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='GIS Data Model'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Runoff &amp; Flood Hydrograph'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Beneth the Surface'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='NA'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='DEM'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Watershed &amp; Hydrograph'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Watershed &amp; Hydrograph cont..'>
+         12
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
